@@ -91,7 +91,7 @@ function stock(p_atual, p_venda, porcent)
        print(string.format(out_p,porcent, p_atual, p_venda))
     else
        porcent = ((p_atual-p_venda)/p_atual)*100
-       print(string.format(" >>>  %.2f%%", porcent*-1))
+       print(string.format(" >>>  %.1f%% de lucro", porcent*-1))
     end
 end
 
