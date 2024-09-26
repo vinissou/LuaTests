@@ -29,7 +29,7 @@ local utf8 = require "utf8"
 
 
 
-print (string.format("ç´´oóóóó")) --UTF-teste para o powershell
+print (string.format("ç´´oóóóó"))
 
 
 lucro         = 0.06
@@ -42,7 +42,7 @@ function qqq(...)
 end
 
 
-function rfix(inicial) --mudar para variáveis
+function rfix(inicial)
     print("diário",inicial*0.00041666)
     print("mensal",inicial*0.008333333)
     print("anual" ,inicial*0.10)
@@ -80,8 +80,20 @@ end
 
 
 
+function stock(p_atual, p_venda, porcent)
+    if porcent == nil then 
+        porcent = 0.04
+    end
 
-
+    if p_venda == nil or p_venda == 0 then
+       p_venda = ((p_atual/100)*(porcent+1))
+       out_p = "O lucro de %.2f%% em %.2f = %.2f"
+       print(string.format(out_p,porcent, p_atual, p_venda))
+    else
+       porcent = ((p_atual-p_venda)/p_atual)*100
+       print(string.format(" >>>  %.2f%%", porcent*-1))
+    end
+end
 
 
 
